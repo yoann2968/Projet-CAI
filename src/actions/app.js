@@ -37,18 +37,18 @@ const loadPage = (page) => async (dispatch) => {
 
   switch(page) {
     case 'view1':
-      await import('../components/my-view1.js');
+      await import(/* webpackChunkName: 'my-view1' */ '../components/my-view1.js');
       // Put code here that you want it to run every time when
       // navigate to view1 page and my-view1.js is loaded
       break;
     case 'view2':
-      await import('../components/my-view2.js');
+      await import(/* webpackChunkName: 'my-view2' */ '../components/my-view2.js');
       break;
     case 'view3':
-      await import('../components/my-view3.js');
+      await import(/* webpackChunkName: 'my-view3' */ '../components/my-view3.js');
       break;
     default:
-      await import('../components/my-view404.js');
+      await import(/* webpackChunkName: 'my-view404' */ '../components/my-view404.js');
   }
 }
 
