@@ -35,7 +35,7 @@ class MyRechercherCours extends connect(store)(PageViewElement) {
     return html`
       ${SharedStyles}
       <section>
-        <p>Compléter cette page avec le formulaire de proposition de cours</p>
+        <p>Compléter cette page avec le formulaire de recherche de cours</p>
         <br><br>
       </section>
     `;

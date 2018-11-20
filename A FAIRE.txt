@@ -7,10 +7,11 @@
  		- quand on clique sur un cours : affichag localisation sur carte, et details du cours 
 
 
-- 2e page : Proposer un cours :
+- 3e page : Proposer un cours :
 		- lieu
 		- horaire
 		- prix/heure
 		- matiere
+
 
 - OPTIONNEL : Rechercher un cours (creation d'une demande de cours)
