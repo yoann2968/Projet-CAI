@@ -1,0 +1,15 @@
+3 pages :
+
+- 1ere page : Accueil
+
+- 2e page : Proposer un cours :
+		- lieu
+		- horaire
+		- prix/heure
+		- matiere
+
+- 3e page : Afficher la liste des cours disponibles :
+		- classements par lieu, prix,...
+ 		- quand on clique sur un cours : affichag localisation sur carte, et details du cours
+
+- OPTIONNEL : Rechercher un cours (creation d'une demande de cours)
