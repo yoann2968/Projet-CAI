@@ -213,7 +213,7 @@ class MyApp extends connect(store)(LitElement) {
     </main>
 
     <footer>
-      <p>Made with &hearts; by the Polymer team.</p>
+      <p>Made with &hearts; by Yoann Spriet.</p>
     </footer>
 
     <snack-bar ?active="${this._snackbarOpened}">
