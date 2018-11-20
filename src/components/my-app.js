@@ -189,8 +189,8 @@ class MyApp extends connect(store)(LitElement) {
       <!-- This gets hidden on a small screen-->
       <nav class="toolbar-list">
         <a ?selected="${this._page === 'accueil'}" href="/accueil">Accueil</a>
-        <a ?selected="${this._page === 'view2'}" href="/view2">View Two</a>
-        <a ?selected="${this._page === 'view3'}" href="/view3">View Three</a>
+        <a ?selected="${this._page === 'rechercher-cours'}" href="/rechercher-cours">Rechercher cours</a>
+        <a ?selected="${this._page === 'proposer-cours'}" href="/proposer-cours">Proposer cours</a>
       </nav>
     </app-header>
 
@@ -199,16 +199,16 @@ class MyApp extends connect(store)(LitElement) {
         @opened-changed="${this._drawerOpenedChanged}">
       <nav class="drawer-list">
         <a ?selected="${this._page === 'accueil'}" href="/accueil">Accueil</a>
-        <a ?selected="${this._page === 'view2'}" href="/view2">View Two</a>
-        <a ?selected="${this._page === 'view3'}" href="/view3">View Three</a>
+        <a ?selected="${this._page === 'rechercher-cours'}" href="/rechercher-cours">Rechercher cours</a>
+        <a ?selected="${this._page === 'proposer-cours'}" href="/proposer-cours">Proposer cours</a>
       </nav>
     </app-drawer>
 
     <!-- Main content -->
     <main role="main" class="main-content">
       <my-accueil class="page" ?active="${this._page === 'accueil'}"></my-accueil>
-      <my-view2 class="page" ?active="${this._page === 'view2'}"></my-view2>
-      <my-view3 class="page" ?active="${this._page === 'view3'}"></my-view3>
+      <my-rechercher-cours class="page" ?active="${this._page === 'rechercher-cours'}"></my-rechercher-cours>
+      <my-proposer-cours class="page" ?active="${this._page === 'proposer-cours'}"></my-proposer-cours>
       <my-view404 class="page" ?active="${this._page === 'view404'}"></my-view404>
     </main>
 
