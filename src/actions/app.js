@@ -34,11 +34,11 @@ const loadPage = (page) => (dispatch) => {
         // navigating to accueil after my-accueil.js is loaded.
       });
       break;
-    case 'view2':
-      import('../components/my-view2.js');
+    case 'rechercher-cours':
+      import('../components/my-rechercher-cours.js');
       break;
-    case 'view3':
-      import('../components/my-view3.js');
+    case 'proposer-cours':
+      import('../components/my-proposer-cours.js');
       break;
     default:
       page = 'view404';
