@@ -1,0 +1,12 @@
+{
+    "nom": "Du Jardin",
+    "prénom": "Jean",
+    "âge": 40,
+    "métier": "professeur de mathématique",
+    "nombre de cour": 5,
+    "spécialité": "maths",
+    "avis": [
+      "Trés bon prof de math",
+      "Excellent cour"
+    ]
+  }
