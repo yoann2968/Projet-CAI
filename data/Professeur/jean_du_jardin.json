@@ -1,6 +1,7 @@
-{
+[
+  {
     "nom": "Du Jardin",
-    "prénom": "Jean",
+    "prenom": "Jean",
     "âge": 40,
     "métier": "professeur de mathématique",
     "nombre de cour": 5,
@@ -10,3 +11,4 @@
       "Excellent cour"
     ]
   }
+]
