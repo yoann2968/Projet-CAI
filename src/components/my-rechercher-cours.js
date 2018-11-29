@@ -7,16 +7,21 @@ class MyRechercherCours extends (PageViewElement) {
   render() {
     return html`
       <div>
-        ${SharedStyles}
-        ${this.prof.map((item) => html` <section><p>Professeur : ${item.prenom} ${item.nom} </p><br><br></section>`)}
+      ${SharedStyles}
+      <section>
+      <h3>Professeurs disponibles</h3>
+      <p><button @click="${this.show}">Rechercher</button></p>
+      </section>
+      </div>
+      <div>
+        ${this.prof.map((item) => html` <section><p>${item.professeur} - ${item.matiere}</p><br><br></section>`)}
       </div>
     `;
   }
 
   constructor(){
     super();
-
-    this.prof = new Array();  
+    this.prof = new Array();
   }
 
   connectedCallback(){
@@ -27,13 +32,21 @@ class MyRechercherCours extends (PageViewElement) {
 
   async _getData() {
     try {
-      const response = await fetch('../data/Professeur/jean_du_jardin.json');
+      const response = await fetch('../data/cours.json');
       this.prof = await response.json();
     }
     catch (err) {
       console.log('fetch failed', err);
     }
   }
+
+  show(){
+
+    this._getData();
+    this.update();
+  }
+
 }
 
 window.customElements.define('my-rechercher-cours', MyRechercherCours);
+

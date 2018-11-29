@@ -3,9 +3,9 @@
     "nom": "Du Jardin",
     "prenom": "Jean",
     "âge": 40,
-    "métier": "professeur de mathématique",
+    "métier": "professeur de mathématiques",
     "nombre de cour": 5,
-    "spécialité": "maths",
+    "matiere": "Mathématiques",
     "avis": [
       "Trés bon prof de math",
       "Excellent cour"
