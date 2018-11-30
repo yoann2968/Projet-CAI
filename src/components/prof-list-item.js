@@ -8,7 +8,9 @@ export class ProfListItem extends PolymerElement {
   static get template() {
     return html`
       [[SharedStyles]]
-      [[professeur]] - [[matiere]]
+      <h4>[[professeur]]</h4>
+      [[matiere]]
+      <h3>Prix : [[prix]]€/h</h3>
     `;
   }
 
@@ -18,6 +20,9 @@ export class ProfListItem extends PolymerElement {
         type: String,
       },
       matiere : {
+        type: String,
+      },
+      prix : {
         type: String,
       },
     }

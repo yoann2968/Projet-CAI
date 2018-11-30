@@ -49,8 +49,9 @@ class MyRechercherCours extends (PageViewElement) {
       ${SharedStyles}
       <section>
       <h3>Professeurs disponibles</h3>
-      <p><button @click="${this.sortByName}">Trier par nom</button></p>
-      <p><button @click="${this.sortByMatiere}">Trier par matiere</button></p>
+      <p>Trier par :<button @click="${this.sortByName}">nom</button>
+      <button @click="${this.sortByMatiere}">matiere</button>
+      <button @click="${this.sortByPrix}">prix</button></p>
       </section>
       </div>
     `;
@@ -73,9 +74,10 @@ class MyRechercherCours extends (PageViewElement) {
         <section><p>               
         <prof-list-item 
           professeur="${item.professeur}"
-          matiere="${item.matiere}">
+          matiere="${item.matiere}"
+          prix="${item.prix}">
         </prof-list-item>
-        </p><br><br></section>`);
+        </p></section>`);
     }
   }
 
@@ -108,6 +110,13 @@ class MyRechercherCours extends (PageViewElement) {
 
   this.updateProfs();
   }
+
+  sortByPrix() {
+    this.prof.sort(function (a, b) {
+    return a.prix - b.prix;
+    });
+  this.updateProfs();
+}
 
 }
 

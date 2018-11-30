@@ -11,7 +11,7 @@
     "durée": 1.5
   },
   {
-    "professeur": "Jean Du Jardin",
+    "professeur": "Jean Neymar",
     "prix": 5,
     "lieu": "ENIB",
     "eleve": "Richard",
@@ -23,7 +23,7 @@
   },
   {
     "professeur": "Patrick Franc",
-    "prix": 225,
+    "prix": 20,
     "lieu": "Beach break",
     "eleve": 45,
     "nombre de place": 0.5,
@@ -33,19 +33,19 @@
     "durée": 1.5
   },
   {
-    "professeur": "Patrick Franc",
-    "prix": 225,
+    "professeur": "Patrice Gilles",
+    "prix": 20,
     "lieu": "Beach break",
     "eleve": 45,
     "nombre de place": 0.5,
-    "matiere": "Français",
+    "matiere": "Chimie",
     "date": 1.5,
     "heure": 1.5,
     "durée": 1.5
   },
   {
     "professeur": "Bernard Tapis",
-    "prix": 225,
+    "prix": 25,
     "lieu": "Beach break",
     "eleve": 45,
     "nombre de place": 0.5,
