@@ -18,6 +18,8 @@ class MyRechercherCours extends (PageViewElement) {
     super();
     this.prof = new Array();
     this.buttonClicked=false;
+    this.detail=false;
+    this.detailProf="test";
   }
 
   connectedCallback(){
@@ -44,7 +46,7 @@ class MyRechercherCours extends (PageViewElement) {
   }
 
   showHTML(){
-    if(this.buttonClicked){
+    if(this.buttonClicked && this.detail==false){
       return html`
       <div>
       ${SharedStyles}
@@ -56,7 +58,11 @@ class MyRechercherCours extends (PageViewElement) {
       </section>
       </div>
     `;
-    }else{
+    }
+    else if(this.buttonClicked && this.detail){
+      return html``;
+    }
+    else{
       return html`
       <div>
       ${SharedStyles}
@@ -70,16 +76,23 @@ class MyRechercherCours extends (PageViewElement) {
   }
 
   showProfs(){
-    if(this.buttonClicked){
+    if(this.buttonClicked && this.detail==false){
       return this.prof.map((item) => html`  
         ${SharedStyles}
-        <section><p><a href="rechercher-cours/prof-detail">               
+        <section><p><a href="javascript:void(0);" @click="${this.showDetail}" id="${item.professeur}" class="a">               
         <prof-list-item 
           professeur="${item.professeur}"
           matiere="${item.matiere}"
           prix="${item.prix}">
         </prof-list-item>
         </a></p></section>`);
+    }
+    else if(this.buttonClicked && this.detail){
+      return html`  
+        ${SharedStyles}               
+        <my-prof-detail
+        professeur="${this.detailProf}">
+        </my-prof-detail>`;      
     }
   }
 
@@ -118,7 +131,21 @@ class MyRechercherCours extends (PageViewElement) {
     return a.prix - b.prix;
     });
   this.updateProfs();
-}
+  }
+
+  showDetail(event){
+
+    this.detail=true;
+    for(let i=0; i<8; i++){
+      if(event.path[i].className=="a"){
+        this.detailProf=event.path[i].id;
+      }
+    }
+    this.update();
+    //remonter en haut de la page
+    window.top.window.scrollTo(0,0);
+
+  }
 
 }
 
