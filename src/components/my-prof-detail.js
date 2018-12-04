@@ -1,10 +1,9 @@
-import { html } from '@polymer/lit-element';
+import { html, LitElement } from '@polymer/lit-element';
 import { PageViewElement } from './page-view-element.js';
 import { SharedStyles } from './shared-styles.js';
-import { ButtonSharedStyles } from './button-shared-styles.js';
 
 
-class ProfDetail extends (PageViewElement) {
+class MyProfDetail extends LitElement {
 
   render() {
     return html`
@@ -19,16 +18,27 @@ class ProfDetail extends (PageViewElement) {
         box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
       }
       </style>
-      <div>
-      <p><a href="/rechercher-cours"><img src="/src/img/back.png"></a></p>
-      </div>`;
+      ${SharedStyles}
+
+      <p><a href="javascript:window.location.reload()"><img src="/src/img/back.png"></a></p>
+      <section>
+      <h3>${this.professeur}</h3>
+      </section>`;
   }
 
   constructor(){
+
     super();
+    this.professeur="test";
+  }
+
+  static get properties() {
+    return {
+      professeur : {type: String}
+    };
   }
 
 }
 
 // Associate the new class with an element name
-customElements.define('my-prof-detail', ProfDetail);
+window.customElements.define('my-prof-detail', MyProfDetail);
