@@ -141,8 +141,6 @@ class MyRechercherCours extends (PageViewElement) {
         this.detailProf=event.path[i].id;
       }
     }
-    
-    console.log(event.path);
     this.update();
     //remonter en haut de la page
     window.top.window.scrollTo(0,0);
