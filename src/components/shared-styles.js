@@ -12,6 +12,69 @@ import { html } from '@polymer/lit-element';
 
 export const SharedStyles = html`
 <style>
+
+div.sent1{
+  width: 300px;
+  heigth: 100px;
+  border: 2px solid #000000; 
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+}
+
+div.sent2{
+  width: 300px;
+  heigth: 100px;
+  border: 2px solid #000000; 
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 12px;
+}
+
+div.sent3{
+  width: 300px;
+  heigth: 100px;
+  border: 2px solid #000000; 
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+}
+
+div.sent4{
+  width: 300px;
+  heigth: 100px;
+  border: 2px solid #000000; 
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 12px;
+}
+
+.Icone1, .Icone2, .Icone3, .Icone4 {
+  margin-left: 700px;
+  float:left;
+}
+
+h3 {
+  font-size: 28px;
+  font-weight: normal;
+  text-align: center;
+  color: var(--app-dark-text-color);
+}
+
+.Title1 {
+  background-color: lightblue;
+  background-attachment: fixed;
+}
+
+  gras {
+    font-weight: bold;
+  }
+
+
   :host {
     display: block;
     box-sizing: border-box;
