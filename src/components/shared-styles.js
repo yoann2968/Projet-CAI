@@ -32,6 +32,10 @@ export const SharedStyles = html`
     background: var(--app-section-even-color);
   }
 
+  a {
+    color: black;
+  }
+
   h2 {
     font-size: 24px;
     text-align: center;

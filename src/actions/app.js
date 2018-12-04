@@ -40,6 +40,9 @@ const loadPage = (page) => (dispatch) => {
     case 'proposer-cours':
       import('../components/my-proposer-cours.js');
       break;
+    case 'rechercher-cours/prof-detail':
+      import('../components/my-prof-detail.js');
+      break;
     default:
       page = 'view404';
       import('../components/my-view404.js');

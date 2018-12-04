@@ -209,11 +209,12 @@ class MyApp extends connect(store)(LitElement) {
       <my-accueil class="page" ?active="${this._page === 'accueil'}"></my-accueil>
       <my-rechercher-cours class="page" ?active="${this._page === 'rechercher-cours'}"></my-rechercher-cours>
       <my-proposer-cours class="page" ?active="${this._page === 'proposer-cours'}"></my-proposer-cours>
+      <my-prof-detail class="page" ?active="${this._page === 'rechercher-cours/prof-detail'}"></my-prof-detail>
       <my-view404 class="page" ?active="${this._page === 'view404'}"></my-view404>
     </main>
 
     <footer>
-      <p>Made with &hearts; by Yoann Spriet.</p>
+      <p>Made with &hearts;.</p>
     </footer>
 
     <snack-bar ?active="${this._snackbarOpened}">

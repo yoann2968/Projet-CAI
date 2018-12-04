@@ -2,6 +2,7 @@ import { html } from '@polymer/lit-element';
 import { PageViewElement } from './page-view-element.js';
 import { SharedStyles } from './shared-styles.js';
 import './prof-list-item.js';
+import './my-prof-detail.js';
 
 class MyRechercherCours extends (PageViewElement) {
 
@@ -49,9 +50,9 @@ class MyRechercherCours extends (PageViewElement) {
       ${SharedStyles}
       <section>
       <h3>Professeurs disponibles</h3>
-      <p>Trier par :<button @click="${this.sortByName}">nom</button>
-      <button @click="${this.sortByMatiere}">matiere</button>
-      <button @click="${this.sortByPrix}">prix</button></p>
+      <p>Trier par : <button @click="${this.sortByName}">Nom</button>
+      <button @click="${this.sortByMatiere}">Matière</button>
+      <button @click="${this.sortByPrix}">Prix</button></p>
       </section>
       </div>
     `;
@@ -71,13 +72,14 @@ class MyRechercherCours extends (PageViewElement) {
   showProfs(){
     if(this.buttonClicked){
       return this.prof.map((item) => html`  
-        <section><p>               
+        ${SharedStyles}
+        <section><p><a href="rechercher-cours/prof-detail">               
         <prof-list-item 
           professeur="${item.professeur}"
           matiere="${item.matiere}"
           prix="${item.prix}">
         </prof-list-item>
-        </p></section>`);
+        </a></p></section>`);
     }
   }
 

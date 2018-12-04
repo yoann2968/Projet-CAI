@@ -9,8 +9,8 @@ export class ProfListItem extends PolymerElement {
     return html`
       [[SharedStyles]]
       <h4>[[professeur]]</h4>
-      [[matiere]]
-      <h3>Prix : [[prix]]€/h</h3>
+      <p>[[matiere]]</p>
+      <h3>[[prix]]€/h</h3>
     `;
   }
 
