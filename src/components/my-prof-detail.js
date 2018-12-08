@@ -29,13 +29,35 @@ class MyProfDetail extends LitElement {
   constructor(){
 
     super();
-    this.professeur="test";
+    this.professeur = "test";
+    this.details;
   }
 
   static get properties() {
     return {
-      professeur : {type: String}
+      professeur : {
+        type: String,
+        observer: '_onChange',
+      }
     };
+  }
+
+  async _onChange() {
+    if(this.professeur=="test"){return;}
+    var fileName = String(this.professeur.toLowerCase()).replace(/ /g,"_");
+    const url = `../data/Professeur/${fileName}.json`;
+    try {
+      const response = await fetch(url);
+      this.details = await response.json();
+    }
+    catch (err) {
+    }
+  }
+
+  connectedCallback(){
+    super.connectedCallback();
+    
+    this._onChange();
   }
 
 }
