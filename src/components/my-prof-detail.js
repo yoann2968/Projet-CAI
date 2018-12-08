@@ -6,6 +6,10 @@ import { SharedStyles } from './shared-styles.js';
 class MyProfDetail extends LitElement {
 
   render() {
+    this.showAvis();
+    console.log(this.details.avis[0]);
+    console.log(this.details.avis);
+    console.log(this.details);
     return html`
       <style>
       img {
@@ -13,6 +17,7 @@ class MyProfDetail extends LitElement {
         border-radius: 4px;
         padding: 5px;
         width: 50px;
+        float: left;
       }
       img:hover {
         box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
@@ -20,17 +25,29 @@ class MyProfDetail extends LitElement {
       </style>
       ${SharedStyles}
 
-      <p><a href="javascript:window.location.reload()"><img src="/src/img/back.png"></a></p>
+      <div><a href="javascript:window.location.reload()"><img src="/src/img/back.png"></a>
+      
+      <h2>${this.professeur}</h2></div>
+      <section></section>
       <section>
-      <h3>${this.professeur}</h3>
-      </section>`;
+      <p>${this.details.age} ans</p>
+      </section>
+      <section>
+      <p>Matière enseignée : ${this.details.matiere}</p>
+      </section>
+      <section>
+      <p>Avis : ${this.showAvis()}</p>
+      </section>
+
+      `;
   }
 
   constructor(){
 
     super();
     this.professeur = "test";
-    this.details;
+    this.details = new Array();
+    this.details.avis = new Array();
   }
 
   static get properties() {
@@ -38,7 +55,10 @@ class MyProfDetail extends LitElement {
       professeur : {
         type: String,
         observer: '_onChange',
-      }
+      },
+      details : {
+        type: Object,
+      },
     };
   }
 
@@ -49,6 +69,7 @@ class MyProfDetail extends LitElement {
     try {
       const response = await fetch(url);
       this.details = await response.json();
+      this.details = this.details[0];
     }
     catch (err) {
     }
@@ -58,6 +79,15 @@ class MyProfDetail extends LitElement {
     super.connectedCallback();
     
     this._onChange();
+  }
+
+  showAvis(){
+    /*if(this.professeur == "test"){return;}
+    console.log("ok");
+    let str = new String();
+    for(let i=0; i<this.professeur.avis.length; i++){
+        console.log(this.professeur.avis[i]);
+    }*/
   }
 
 }
