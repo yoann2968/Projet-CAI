@@ -12,7 +12,7 @@ class MyProfDetail extends LitElement {
         border: 1px solid #ddd;
         border-radius: 4px;
         padding: 5px;
-        width: 50px;
+        width: 40px;
         float: left;
       }
       img:hover {
