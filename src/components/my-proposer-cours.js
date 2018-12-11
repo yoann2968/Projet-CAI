@@ -13,11 +13,11 @@ class MyProposerCours extends (PageViewElement) {
     `;
   }
 
-  static get properties() { return {
-    // This is the data from the store.
-    _quantity: { type: Number },
-    _error: { type: String },
-  }}
+  static get properties() { 
+    return {
+
+    }
+  }
 
 }
 

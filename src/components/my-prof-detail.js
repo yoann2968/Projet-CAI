@@ -21,7 +21,7 @@ class MyProfDetail extends LitElement {
       </style>
       ${SharedStyles}
 
-      <div><a href="javascript:window.location.reload()"><img src="/src/img/back.png"></a>
+      <div class="Title1"><a href="javascript:window.location.reload()"><img src="/src/img/back.png"></a>
       
       <h2>${this.professeur}, ${this.details.age} ans</h2></div>
       <section></section>
