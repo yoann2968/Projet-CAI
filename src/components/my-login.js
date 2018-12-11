@@ -23,8 +23,8 @@ class MyLogin extends PageViewElement {
       </div>
       <form class="Login">
         <h3>Connectez vous à votre compte</h3>
-        <textarea rows=1 cols=40>Entrez votre login</textarea>
-        <textarea rows=1 cols=40>Entrez votre mot de passe</textarea>
+        <textarea class="login1" name="Login1" rows=1 cols=40>Entrez votre login</textarea>
+        <textarea class="mdp1" name="Mdp1" rows=1 cols=40>Entrez votre mot de passe</textarea>
       </form><br>
       <button class="buttonLogin">Se connecter</button>
       <form class="Register">
@@ -32,8 +32,8 @@ class MyLogin extends PageViewElement {
         <h2>Pas encore inscrit?</h2>
       </div>
         <h3>Inscrivez-vous à l'aide du formulaire ci-dessous: Le login et le mot de passe vous servirons par la suite pour vous connecter</h3>
-        <textarea rows=1 cols=40>Entrez votre login</textarea>
-        <textarea rows=1 cols=40>Entrez votre mot de passe</textarea>
+        <textarea class="login2" name="Login2" rows=1 cols=40>Entrez votre login</textarea>
+        <textarea class="mdp2" name="Mdp2" rows=1 cols=40>Entrez votre mot de passe</textarea>
       </form><br>
       <button class="buttonRegister">S'enregistrer</button>
 

@@ -116,7 +116,7 @@ gras {
   transition-duration: 0.4s;
 }  
 
-.buttonLogin:hover {
+.buttonRegister:hover {
   background-color: #FFFFFF; /* White */
   color: red;
 }
