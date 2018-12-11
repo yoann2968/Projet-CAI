@@ -9,7 +9,17 @@ class MyProposerCours extends (PageViewElement) {
   render() {
     return html`
       ${SharedStyles}
-
+      <div class="Title1">
+      <h2>Proposez votre cours</h2>
+      </div>
+      <section> 
+      <form method="post" action="traitement.php">
+      <p>
+        <label for="pseudo">Votre pseudo :</label>
+        <input type="text" name="pseudo" id="pseudo" placeholder="Ex : Zozor" size="30" maxlength="10" />
+      </p>
+    </form>
+    </section>
     `;
   }
 
