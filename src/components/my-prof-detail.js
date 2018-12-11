@@ -6,10 +6,6 @@ import { SharedStyles } from './shared-styles.js';
 class MyProfDetail extends LitElement {
 
   render() {
-    this.showAvis();
-    console.log(this.details.avis[0]);
-    console.log(this.details.avis);
-    console.log(this.details);
     return html`
       <style>
       img {
@@ -27,18 +23,23 @@ class MyProfDetail extends LitElement {
 
       <div><a href="javascript:window.location.reload()"><img src="/src/img/back.png"></a>
       
-      <h2>${this.professeur}</h2></div>
+      <h2>${this.professeur}, ${this.details.age} ans</h2></div>
       <section></section>
       <section>
-      <p>${this.details.age} ans</p>
+      <p><b>Matière enseignée : </b>${this.details.matiere}</p>
       </section>
       <section>
-      <p>Matière enseignée : ${this.details.matiere}</p>
+      <p>Propose <b>${this.details.places}</b> places dans son cours, à <b>${this.details.prix}</b>€/h</p>
       </section>
       <section>
-      <p>Avis : ${this.showAvis()}</p>
+      <p><b>Lieu : </b><br><i>${this.details.adresse},<br>${this.details.ville}</i></p>
       </section>
-
+      <section>
+      <p><b>Avis : </b><br><i>${this.showAvis()}</i></p>
+      </section>
+      <section>
+      <p><b>Contact : </b><br><i>${this.showContact()}</i></p>
+      </section>
       `;
   }
 
@@ -48,6 +49,7 @@ class MyProfDetail extends LitElement {
     this.professeur = "test";
     this.details = new Array();
     this.details.avis = new Array();
+    this.details.contact = new Array();
   }
 
   static get properties() {
@@ -69,7 +71,6 @@ class MyProfDetail extends LitElement {
     try {
       const response = await fetch(url);
       this.details = await response.json();
-      this.details = this.details[0];
     }
     catch (err) {
     }
@@ -82,12 +83,14 @@ class MyProfDetail extends LitElement {
   }
 
   showAvis(){
-    /*if(this.professeur == "test"){return;}
-    console.log("ok");
-    let str = new String();
-    for(let i=0; i<this.professeur.avis.length; i++){
-        console.log(this.professeur.avis[i]);
-    }*/
+    if(this.professeur == "test"){return;}
+    return this.details.avis.map((item) => html`"${item}"<br>`);
+  }
+
+  showContact(){
+    if(this.professeur == "test"){return;}
+    return html`${this.details.contact[0]}<br>
+                <a href="mailto:${this.details.contact[1]}">${this.details.contact[1]}</a>`;
   }
 
 }

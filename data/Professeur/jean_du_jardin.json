@@ -1,14 +1,22 @@
-[
   {
-    "nom": "Du Jardin",
-    "prenom": "Jean",
+    "nom": "Jean Du Jardin",
     "age": 40,
-    "metier": "professeur de mathématiques",
-    "nombre de cours": 5,
+    "places": 5,
+    "prix": 5,
+    "durée": 1.5,
     "matiere": "Mathématiques",
+    "ville": "Brest",
+    "adresse": "5 rue Général de Gaulle",
+    "horaire": [
+      "Samedi",
+      "16"
+    ],
     "avis": [
       "Très bon prof de maths",
       "Excellent cours"
+    ],
+    "contact": [
+      "06.78.91.01.11",
+      "dujardin@gmail.com"
     ]
   }
-]
