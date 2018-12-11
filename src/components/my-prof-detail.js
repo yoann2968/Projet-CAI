@@ -29,7 +29,7 @@ class MyProfDetail extends LitElement {
       <p><b>Matière enseignée : </b>${this.details.matiere}</p>
       </section>
       <section>
-      <p>Propose <b>${this.details.places}</b> places dans son cours, à <b>${this.details.prix}</b>€/h</p>
+      <p>${this.showCours()}</p>
       </section>
       <section>
       <p><b>Lieu : </b><br><i>${this.details.adresse},<br>${this.details.ville}</i></p>
@@ -50,6 +50,8 @@ class MyProfDetail extends LitElement {
     this.details = new Array();
     this.details.avis = new Array();
     this.details.contact = new Array();
+    this.details.cours = new Array();
+    this.details.cours[0]="test";
   }
 
   static get properties() {
@@ -93,7 +95,10 @@ class MyProfDetail extends LitElement {
                 <a href="mailto:${this.details.contact[1]}">${this.details.contact[1]}</a>`;
   }
 
+  showCours(){
+    if(this.professeur == "test" || this.details.cours[0]=="test"){return;}
+    return this.details.cours.map((item) =>html`Propose <b>${item.places}</b> place(s) tous les <b>${item.jour} à ${item.heure}h</b> pendant <b>${item.longueur}h</b>, à <b>${this.details.prix}</b>€/h<br>`);
+  }
 }
-
 // Associate the new class with an element name
 window.customElements.define('my-prof-detail', MyProfDetail);
