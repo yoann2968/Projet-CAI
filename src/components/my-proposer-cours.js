@@ -12,7 +12,7 @@ class MyProposerCours extends (PageViewElement) {
       <div class="Title1">
       <h2>Proposez votre cours</h2>
       </div>
-      <form method="post">
+      <form>
       <section> 
       <h3>Qui êtes-vous ?</h3>
       ${this.showWhoAreYou()}
@@ -29,8 +29,11 @@ class MyProposerCours extends (PageViewElement) {
       <h3>Vous contacter</h3>
       ${this.showContact()}
       </section>
+      <input type="submit" value="Submit">
       </form>
-    
+      <?php
+  echo $_POST['professeur'];
+?>
     `;
   }
 
@@ -41,11 +44,8 @@ class MyProposerCours extends (PageViewElement) {
 
   constructor(){
     super();
-    this.nbCours = 1;
-  }
-  addCours(){
-    console.log(this.nbCours);
-    this.nbCours++;
+    this.chemin = document.location.href;
+    console.log((this.chemin.substring(37)).split("&"));
   }
 
   showWhoAreYou(){
@@ -110,9 +110,11 @@ class MyProposerCours extends (PageViewElement) {
       </p><p>
         <label for="tel">Numéro de téléphone :</label>
         <input type="text" name="tel" id="tel" placeholder="Ex : 0607080910" size="30" maxlength="10" />
+        <button @click="${this.sendForm}">Rechercher</button>
       </p>
     `;
   }
+
 }
 
 window.customElements.define('my-proposer-cours', MyProposerCours);
