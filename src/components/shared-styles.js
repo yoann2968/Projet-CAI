@@ -53,6 +53,7 @@ div.sent4{
   margin-top: 12px;
 }
 
+/* Icons */
 .Icone1, .Icone2, .Icone3, .Icone4 {
   margin-left: 700px;
   float:left;
@@ -70,10 +71,12 @@ h3 {
   background-attachment: fixed;
 }
 
+/* Bold effect for writting */
 gras {
   font-weight: bold;
 }
 
+/* First button */
 .buttonLogin {
   background-color: #555555; /* Black */
   border: 2px solid #555555;
@@ -90,16 +93,25 @@ gras {
   transition-duration: 0.4s;
 }  
 
+/* Effect when we push the button */
 .buttonLogin:hover {
   background-color: #FFFFFF; /* White */
   color: black;
 }
 
+/* Specifity for the Login's class */
 .Login {
-  margin-left: auto;
+  margin-left: 600px;
   margin-right: auto;
 }  
 
+/* Specifity for the Register's class */
+.Register {
+  margin-left: 600px;
+  margin-right: auto;
+}  
+
+/* Second button */
 .buttonRegister {
   background-color: #EE0000; /* Black */
   border: 2px solid #EE0000;
@@ -116,15 +128,59 @@ gras {
   transition-duration: 0.4s;
 }  
 
+/* Effect when we push the button */
 .buttonRegister:hover {
   background-color: #FFFFFF; /* White */
   color: red;
 }
 
-.Register {
-  margin-left: auto;
-  margin-right: auto;
-}  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
 
 
   :host {

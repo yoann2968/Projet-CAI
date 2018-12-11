@@ -21,24 +21,49 @@ class MyLogin extends PageViewElement {
       <div class="Title1">
         <h2>Rentrez vos informations pour vous connecter</h2>
       </div>
+      
+
+      <h3>Connectez vous à votre compte</h3>
       <form class="Login">
-        <h3>Connectez vous à votre compte</h3>
-        <textarea class="login1" name="Login1" rows=1 cols=40>Entrez votre login</textarea>
-        <textarea class="mdp1" name="Mdp1" rows=1 cols=40>Entrez votre mot de passe</textarea>
+        <p>
+            <label for="pseudo">Votre pseudo :</label>
+            <input type="text" name="pseudo1" class="pseudo1" placeholder="Ex : Zozor" size="30" maxlength="10" />
+        </p>
+        <p>
+            <label for="pseudo">Votre mot de passe :</label>
+            <input type="text" name="mdp1" class="mdp1" placeholder="Entrez votre mot de passe" size="30" maxlength="10" />
+        </p>
+        <button class="buttonLogin">Se connecter</button>
       </form><br>
-      <button class="buttonLogin">Se connecter</button>
-      <form class="Register">
+
       <div class="Title1">
         <h2>Pas encore inscrit?</h2>
       </div>
-        <h3>Inscrivez-vous à l'aide du formulaire ci-dessous: Le login et le mot de passe vous servirons par la suite pour vous connecter</h3>
-        <textarea class="login2" name="Login2" rows=1 cols=40>Entrez votre login</textarea>
-        <textarea class="mdp2" name="Mdp2" rows=1 cols=40>Entrez votre mot de passe</textarea>
-      </form><br>
-      <button class="buttonRegister">S'enregistrer</button>
+      <h3>Inscrivez-vous à l'aide du formulaire ci-dessous: Le login et le mot de passe vous servirons par la suite pour vous connecter</h3>
 
+      <form class="Register">
+        <p>
+            <label for="pseudo">Votre pseudo :</label>
+            <input type="text" name="pseudo2" class="pseudo2" placeholder="Ex : Zozor" size="30" maxlength="10" />
+        </p>
+        <p>
+            <label for="pseudo">Votre mot de passe :</label>
+            <input type="text" name="mdp2" class="mdp2" placeholder="Entrez votre mot de passe" size="30" maxlength="10" />
+        </p>
+        <button class="buttonRegister">S'enregistrer</button>
+      </form><br>
+   
     `;
+
+    
   }
+
+
+
+
+
+
+
 }
 
 window.customElements.define('my-login', MyLogin);
