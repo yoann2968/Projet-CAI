@@ -70,9 +70,61 @@ h3 {
   background-attachment: fixed;
 }
 
-  gras {
-    font-weight: bold;
-  }
+gras {
+  font-weight: bold;
+}
+
+.buttonLogin {
+  background-color: #555555; /* Black */
+  border: 2px solid #555555;
+  border-radius: 8px;
+  color: white;
+  display: inline-block;
+  font-size: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}  
+
+.buttonLogin:hover {
+  background-color: #FFFFFF; /* White */
+  color: black;
+}
+
+.Login {
+  margin-left: auto;
+  margin-right: auto;
+}  
+
+.buttonRegister {
+  background-color: #EE0000; /* Black */
+  border: 2px solid #EE0000;
+  border-radius: 8px;
+  color: white;
+  display: inline-block;
+  font-size: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}  
+
+.buttonLogin:hover {
+  background-color: #FFFFFF; /* White */
+  color: red;
+}
+
+.Register {
+  margin-left: auto;
+  margin-right: auto;
+}  
 
 
   :host {

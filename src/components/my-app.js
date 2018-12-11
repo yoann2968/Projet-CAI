@@ -177,6 +177,18 @@ class MyApp extends connect(store)(LitElement) {
           padding-right: 0px;
         }
       }
+
+      .login-btn {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+      }
+
     </style>
 
     <!-- Header -->
@@ -191,6 +203,7 @@ class MyApp extends connect(store)(LitElement) {
         <a ?selected="${this._page === 'accueil'}" href="/accueil">Accueil</a>
         <a ?selected="${this._page === 'rechercher-cours'}" href="/rechercher-cours">Rechercher cours</a>
         <a ?selected="${this._page === 'proposer-cours'}" href="/proposer-cours">Proposer cours</a>
+        <a ?selected="${this._page === 'login'}" href="/login">Login</a>
       </nav>
     </app-header>
 
@@ -201,6 +214,7 @@ class MyApp extends connect(store)(LitElement) {
         <a ?selected="${this._page === 'accueil'}" href="/accueil">Accueil</a>
         <a ?selected="${this._page === 'rechercher-cours'}" href="/rechercher-cours">Rechercher cours</a>
         <a ?selected="${this._page === 'proposer-cours'}" href="/proposer-cours">Proposer cours</a>
+        <a ?selected="${this._page === 'login'}" href="/login">Login</a>
       </nav>
     </app-drawer>
 
@@ -210,11 +224,12 @@ class MyApp extends connect(store)(LitElement) {
       <my-rechercher-cours class="page" ?active="${this._page === 'rechercher-cours'}"></my-rechercher-cours>
       <my-proposer-cours class="page" ?active="${this._page === 'proposer-cours'}"></my-proposer-cours>
       <my-prof-detail class="page" ?active="${this._page === 'rechercher-cours/prof-detail'}"></my-prof-detail>
+      <my-login class="page" ?active="${this._page === 'login'}"></my-login>
       <my-view404 class="page" ?active="${this._page === 'view404'}"></my-view404>
     </main>
 
     <footer>
-      <p>Made with &hearts;.</p>
+      <p>Made by Lukas, Damien et Yoann</p>
     </footer>
 
     <snack-bar ?active="${this._snackbarOpened}">
