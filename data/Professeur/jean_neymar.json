@@ -1,0 +1,24 @@
+{
+    "nom": "Jean Neymar",
+    "age": 52,
+    "prix": 5,
+    "matiere": "Mathématiques",
+    "ville": "Quimper",
+    "adresse": "4 rue de la Liberté",
+    "cours": [
+      {
+      "jour":"Mercredi",
+      "heure":"14",
+      "longueur":"2",
+      "places": 1
+      }
+],
+    "avis": [
+      "Mr Neymar est un très mauvais pédagogue",
+      "Ennui total"
+    ],
+    "contact": [
+      "06.78.44.01.17",
+      "jean_neymar@gmail.com"
+    ]
+}

@@ -2,11 +2,7 @@
   {
     "professeur": "Jean Du Jardin",
     "prix": 5,
-    "lieu": "ENIB",
-    "eleve": "Richard",
-    "nombre de place": 2,
     "matiere": "Mathématiques",
-    "date": "01-12-18",
     "heure": 10,
     "durée": 1.5
   },
