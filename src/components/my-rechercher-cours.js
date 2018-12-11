@@ -50,8 +50,10 @@ class MyRechercherCours extends (PageViewElement) {
       return html`
       <div>
       ${SharedStyles}
+      <div class="Title1">
+      <h2>Professeurs disponibles</h2>
+      </div>
       <section>
-      <h3>Professeurs disponibles</h3>
       <p>Trier par : <button @click="${this.sortByName}">Nom</button>
       <button @click="${this.sortByMatiere}">Matière</button>
       <button @click="${this.sortByPrix}">Prix</button></p>
@@ -66,8 +68,11 @@ class MyRechercherCours extends (PageViewElement) {
       return html`
       <div>
       ${SharedStyles}
+      
+      <div class="Title1">
+      <h2>Recherche des professeurs disponibles</h2>
+      </div>
       <section>
-      <h3>Recherche des professeurs disponibles</h3>
       <p><button @click="${this.updateProfs}">Rechercher</button></p>
       </section>
       </div>

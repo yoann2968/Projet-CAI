@@ -1,16 +1,24 @@
   {
     "nom": "Jean Du Jardin",
     "age": 40,
-    "places": 5,
     "prix": 5,
-    "durée": 1.5,
     "matiere": "Mathématiques",
     "ville": "Brest",
     "adresse": "5 rue Général de Gaulle",
-    "horaire": [
-      "Samedi",
-      "16"
-    ],
+    "cours": [
+      {
+      "jour":"Samedi",
+      "heure":"17.30",
+      "longueur":"1",
+      "places": 3
+      },
+      {
+      "jour":"Mercredi",
+      "heure":"18",
+      "longueur":"2",
+      "places": 2
+      }
+],
     "avis": [
       "Très bon prof de maths",
       "Excellent cours"

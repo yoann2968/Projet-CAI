@@ -2,52 +2,26 @@
   {
     "professeur": "Jean Du Jardin",
     "prix": 5,
-    "matiere": "Mathématiques",
-    "heure": 10,
-    "durée": 1.5
+    "matiere": "Mathématiques"
   },
   {
     "professeur": "Jean Neymar",
     "prix": 5,
-    "lieu": "ENIB",
-    "eleve": "Richard",
-    "nombre de place": 2,
-    "matiere": "Mathématiques",
-    "date": "03-12-18",
-    "heure": 10,
-    "durée": 1.5
+    "matiere": "Mathématiques"
   },
   {
     "professeur": "Patrick Franc",
     "prix": 20,
-    "lieu": "Beach break",
-    "eleve": 45,
-    "nombre de place": 0.5,
-    "matiere": "Physique",
-    "date": 1.5,
-    "heure": 1.5,
-    "durée": 1.5
+    "matiere": "Physique"
   },
   {
     "professeur": "Patrice Gilles",
     "prix": 20,
-    "lieu": "Beach break",
-    "eleve": 45,
-    "nombre de place": 0.5,
-    "matiere": "Chimie",
-    "date": 1.5,
-    "heure": 1.5,
-    "durée": 1.5
+    "matiere": "Chimie"
   },
   {
     "professeur": "Bernard Tapis",
     "prix": 25,
-    "lieu": "Beach break",
-    "eleve": 45,
-    "nombre de place": 0.5,
-    "matiere": "Français",
-    "date": 1.5,
-    "heure": 1.5,
-    "durée": 1.5
+    "matiere": "Français"
   }
 ]
