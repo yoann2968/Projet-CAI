@@ -73,7 +73,7 @@ class MyRechercherCours extends (PageViewElement) {
       <h2>Recherche des professeurs disponibles</h2>
       </div>
       <section>
-      <p><button @click="${this.updateProfs}">Rechercher</button></p>
+      <p><h2><button class="buttonLogin" @click="${this.updateProfs}">Rechercher</button></h2></p>
       </section>
       </div>
     `;
