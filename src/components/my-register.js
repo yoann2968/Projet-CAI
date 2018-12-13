@@ -14,19 +14,17 @@ import { PageViewElement } from './page-view-element.js';
 // These are the shared styles needed by this element.
 import { SharedStyles } from './shared-styles.js';
 
-class MyLogin extends PageViewElement {
+class MyRegister extends PageViewElement {
   render() {
     return html`
       ${SharedStyles}
       <div class="Title1">
-        <h2>Rentrez vos informations pour vous connecter</h2>
+        <h2>Pas encore inscrit?</h2>
       </div>
-      <h3>Connectez vous à votre compte</h3>
-      ${this.showLogin()}
-   
+      <h3>Inscrivez-vous à l'aide du formulaire ci-dessous: Le login et le mot de passe vous servirons par la suite pour vous connecter</h3>
+      ${this.showRegister()}
     `;
 
-    
   }
 
   static get properties() { 
@@ -39,9 +37,9 @@ class MyLogin extends PageViewElement {
     this.sendRequest();
   }
 
-  showLogin(){
+  showRegister(){
     return html`
-    <form class="Login">
+    <form class="Register">
     <p>
         <label for="pseudo">Votre pseudo :</label>
         <input type="text" name="pseudo__" placeholder="Ex : Zozor" size="30" maxlength="10" />
@@ -50,16 +48,15 @@ class MyLogin extends PageViewElement {
         <label for="pseudo">Votre mot de passe :</label>
         <input type="text" name="mdp_____" placeholder="Entrez votre mot de passe" size="30" maxlength="10" />
     </p>
-    <button class="buttonLogin">Se connecter</button>
-    </form><br>
+    <button class="buttonRegister">S'enregistrer</button>
+  </form><br>
     `;
   }
-
 
   sendRequest(){
     let url = document.location.href;
     let valide = true; //LET PORTEE DE BLOC ALORS QUE VAR PORTEE DE FONCTION
-    let answers = (url.substring(28)).split("&");
+    let answers = (url.substring(31)).split("&");
     console.log("url: ",url)
     console.log("answers: ",answers)
 
@@ -88,11 +85,11 @@ class MyLogin extends PageViewElement {
         }
       };
       xhr.send(JsonFile);
-      /*alert("Vous vous êtes bien connecté"); NE LE FAIRE QUE SI LE MDP ET LE LOGIN CORRESPONDENT AVEC CE QUI EST DANS LA BDD*/
+      /*alert("Vous vous êtes bien enregistré"); VOIR COMMENT FAIRE POUR QU'A L'ACTUALISATION DE LA PAGE CELUI-CI NE SOIT PAS AFFICHE*/
     }
 
   }
 
 }
 
-window.customElements.define('my-login', MyLogin);
+window.customElements.define('my-register', MyRegister);

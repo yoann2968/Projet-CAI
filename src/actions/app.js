@@ -46,6 +46,9 @@ const loadPage = (page) => (dispatch) => {
     case 'login':
       import('../components/my-login.js');
       break;
+    case 'register':
+      import('../components/my-register.js');
+      break;
     default:
       page = 'view404';
       import('../components/my-view404.js');

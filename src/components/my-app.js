@@ -204,6 +204,7 @@ class MyApp extends connect(store)(LitElement) {
         <a ?selected="${this._page === 'rechercher-cours'}" href="/rechercher-cours">Rechercher cours</a>
         <a ?selected="${this._page === 'proposer-cours'}" href="/proposer-cours">Proposer cours</a>
         <a ?selected="${this._page === 'login'}" href="/login">Login</a>
+        <a ?selected="${this._page === 'register'}" href="/register">Register</a>
       </nav>
     </app-header>
 
@@ -215,6 +216,7 @@ class MyApp extends connect(store)(LitElement) {
         <a ?selected="${this._page === 'rechercher-cours'}" href="/rechercher-cours">Rechercher cours</a>
         <a ?selected="${this._page === 'proposer-cours'}" href="/proposer-cours">Proposer cours</a>
         <a ?selected="${this._page === 'login'}" href="/login">Login</a>
+        <a ?selected="${this._page === 'register'}" href="/register">Register</a>
       </nav>
     </app-drawer>
 
@@ -225,6 +227,7 @@ class MyApp extends connect(store)(LitElement) {
       <my-proposer-cours class="page" ?active="${this._page === 'proposer-cours'}"></my-proposer-cours>
       <my-prof-detail class="page" ?active="${this._page === 'rechercher-cours/prof-detail'}"></my-prof-detail>
       <my-login class="page" ?active="${this._page === 'login'}"></my-login>
+      <my-register class="page" ?active="${this._page === 'register'}"></my-register>
       <my-view404 class="page" ?active="${this._page === 'view404'}"></my-view404>
     </main>
 
