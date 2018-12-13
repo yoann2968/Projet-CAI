@@ -21,48 +21,96 @@ class MyLogin extends PageViewElement {
       <div class="Title1">
         <h2>Rentrez vos informations pour vous connecter</h2>
       </div>
-      
-
       <h3>Connectez vous à votre compte</h3>
-      <form class="Login">
-        <p>
-            <label for="pseudo">Votre pseudo :</label>
-            <input type="text" name="pseudo1" class="pseudo1" placeholder="Ex : Zozor" size="30" maxlength="10" />
-        </p>
-        <p>
-            <label for="pseudo">Votre mot de passe :</label>
-            <input type="text" name="mdp1" class="mdp1" placeholder="Entrez votre mot de passe" size="30" maxlength="10" />
-        </p>
-        <button class="buttonLogin">Se connecter</button>
-      </form><br>
-
+      ${this.showLogin()}
       <div class="Title1">
         <h2>Pas encore inscrit?</h2>
       </div>
       <h3>Inscrivez-vous à l'aide du formulaire ci-dessous: Le login et le mot de passe vous servirons par la suite pour vous connecter</h3>
-
-      <form class="Register">
-        <p>
-            <label for="pseudo">Votre pseudo :</label>
-            <input type="text" name="pseudo2" class="pseudo2" placeholder="Ex : Zozor" size="30" maxlength="10" />
-        </p>
-        <p>
-            <label for="pseudo">Votre mot de passe :</label>
-            <input type="text" name="mdp2" class="mdp2" placeholder="Entrez votre mot de passe" size="30" maxlength="10" />
-        </p>
-        <button class="buttonRegister">S'enregistrer</button>
-      </form><br>
+      ${this.showRegister()}
    
     `;
 
     
   }
 
+  static get properties() { 
+    return {
+    }
+  }
 
+  constructor(){
+    super();
+    this.sendRequest();
+  }
 
+  showLogin(){
+    return html`
+    <form class="Login">
+    <p>
+        <label for="pseudo">Votre pseudo :</label>
+        <input type="text" name="pseudo__" placeholder="Ex : Zozor" size="30" maxlength="10" />
+    </p>
+    <p>
+        <label for="pseudo">Votre mot de passe :</label>
+        <input type="text" name="mdp_____" placeholder="Entrez votre mot de passe" size="30" maxlength="10" />
+    </p>
+    <button class="buttonLogin">Se connecter</button>
+    </form><br>
+    `;
+  }
 
+  showRegister(){
+    return html`
+    <form class="Register">
+    <p>
+        <label for="pseudo">Votre pseudo :</label>
+        <input type="text" name="pseudo__" placeholder="Ex : Zozor" size="30" maxlength="10" />
+    </p>
+    <p>
+        <label for="pseudo">Votre mot de passe :</label>
+        <input type="text" name="mdp_____" placeholder="Entrez votre mot de passe" size="30" maxlength="10" />
+    </p>
+    <button class="buttonRegister">S'enregistrer</button>
+  </form><br>
+    `;
+  }
 
+  sendRequest(){
+    let url = document.location.href;
+    let valide = true; //LET PORTEE DE BLOC ALORS QUE VAR PORTEE DE FONCTION
+    let answers = (url.substring(28)).split("&");
+    console.log("url: ",url)
+    console.log("answers: ",answers)
 
+    for(let i = 0; i<answers.length; i++){
+      answers[i]=answers[i].substring(9);
+      if(answers[i]==""){
+        valide = false;
+      }
+    }
+    console.log("answers2: ",answers)
+    if(valide){//SI LES DONNEES RENSEIGNEES VALIDES : ENVOI
+      
+      //PREPARATION DU JSON
+      let JsonFile = JSON.stringify({
+        "login": answers[0],
+        "mdp": answers[1]
+    });
+
+      var xhr = new XMLHttpRequest();
+      var url_server = "url"; //MODIFIER CET URL
+      xhr.open("POST", url_server, true);
+      xhr.setRequestHeader("Content-Type", "application/json");
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          var json = JSON.parse(xhr.responseText);
+        }
+      };
+      xhr.send(JsonFile);
+    }
+
+  }
 
 }
 
