@@ -79,7 +79,7 @@ class MyLogin extends PageViewElement {
     });
 
       var xhr = new XMLHttpRequest();
-      var url_server = "url"; //MODIFIER CET URL
+      var url_server = "http://127.0.0.1:3000/inscription"; //MODIFIER CET URL avec http://127.0.0.1:3000/inscription
       xhr.open("POST", url_server, true);
       xhr.setRequestHeader("Content-Type", "application/json");
       xhr.onreadystatechange = function () {
