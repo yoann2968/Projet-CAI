@@ -170,7 +170,7 @@ class MyProposerCours extends (PageViewElement) {
     });
 
       var xhr = new XMLHttpRequest();
-      var url_server = "http://127.0.0.1:3000/createCour"; //MODIFIER CET URL avec http://127.0.0.1:3000/createCour
+      var url_server = "http://127.0.0.1:3000/createCour"; //MODIFIER CET URL avec http://127.0.0.1:3000/createCours
       xhr.open("POST", url_server, true);
       xhr.setRequestHeader("Content-Type", "application/json");
       xhr.onreadystatechange = function () {
