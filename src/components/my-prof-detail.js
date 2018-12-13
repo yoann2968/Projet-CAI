@@ -69,7 +69,7 @@ class MyProfDetail extends LitElement {
   async _onChange() {
     if(this.professeur=="test"){return;}
     var fileName = String(this.professeur.toLowerCase()).replace(/ /g,"_");
-    const url = `../data/Professeur/${fileName}.json`;
+    const url = `../data/Professeur/${fileName}.json`; //remplacer par `http://127.0.0.1:3000/prof/${this.professeur}`
     try {
       const response = await fetch(url);
       this.details = await response.json();

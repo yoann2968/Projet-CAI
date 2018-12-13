@@ -30,7 +30,7 @@ class MyRechercherCours extends (PageViewElement) {
 
   async _getData() {
     try {
-      const response = await fetch('../data/cours.json');
+      const response = await fetch('../data/cours.json');  //mettre dans le fetch "http://127.0.0.1:3000/cours"
       this.prof = await response.json();
     }
     catch (err) {
