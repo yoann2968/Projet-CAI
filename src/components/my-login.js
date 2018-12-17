@@ -80,7 +80,8 @@ class MyLogin extends PageViewElement {
 
       var xhr = new XMLHttpRequest();
       var url_server = "http://127.0.0.1:3000/inscription"; //MODIFIER CET URL avec http://127.0.0.1:3000/inscription
-      xhr.open("POST", url_server, true);
+      let v= xhr.open("POST", url_server, true);
+      console.log("Resultat de la requete POST: ",v)
       xhr.setRequestHeader("Content-Type", "application/json");
       xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
