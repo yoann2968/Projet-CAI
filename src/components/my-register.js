@@ -76,7 +76,7 @@ class MyRegister extends PageViewElement {
     });
 
       var xhr = new XMLHttpRequest();
-      var url_server = "url"; //MODIFIER CET URL
+      var url_server = "http://127.0.0.1:3000/inscription"; //MODIFIER CET URL avec http://127.0.0.1:3000/inscription
       xhr.open("POST", url_server, true);
       xhr.setRequestHeader("Content-Type", "application/json");
       xhr.onreadystatechange = function () {
@@ -85,6 +85,7 @@ class MyRegister extends PageViewElement {
         }
       };
       xhr.send(JsonFile);
+      history.pushState(null,null,"/register");
       /*alert("Vous vous êtes bien enregistré"); VOIR COMMENT FAIRE POUR QU'A L'ACTUALISATION DE LA PAGE CELUI-CI NE SOIT PAS AFFICHE*/
     }
 

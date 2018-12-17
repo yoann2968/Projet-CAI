@@ -79,9 +79,8 @@ class MyLogin extends PageViewElement {
     });
 
       var xhr = new XMLHttpRequest();
-      var url_server = "http://127.0.0.1:3000/inscription"; //MODIFIER CET URL avec http://127.0.0.1:3000/inscription
-      let v= xhr.open("POST", url_server, true);
-      console.log("Resultat de la requete POST: ",v)
+      var url_server = "http://127.0.0.1:3000/login"; //MODIFIER CET URL avec http://127.0.0.1:3000/login
+      xhr.open("POST", url_server, true);
       xhr.setRequestHeader("Content-Type", "application/json");
       xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
@@ -89,6 +88,7 @@ class MyLogin extends PageViewElement {
         }
       };
       xhr.send(JsonFile);
+      history.pushState(null,null,"/login");
       /*alert("Vous vous êtes bien connecté"); NE LE FAIRE QUE SI LE MDP ET LE LOGIN CORRESPONDENT AVEC CE QUI EST DANS LA BDD*/
     }
 
