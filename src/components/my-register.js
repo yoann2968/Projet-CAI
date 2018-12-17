@@ -85,6 +85,7 @@ class MyRegister extends PageViewElement {
         }
       };
       xhr.send(JsonFile);
+      history.pushState(null,null,"/register");
       /*alert("Vous vous êtes bien enregistré"); VOIR COMMENT FAIRE POUR QU'A L'ACTUALISATION DE LA PAGE CELUI-CI NE SOIT PAS AFFICHE*/
     }
 

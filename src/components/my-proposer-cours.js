@@ -180,6 +180,7 @@ class MyProposerCours extends (PageViewElement) {
       };
       xhr.send(JsonFile);
     }
+    history.pushState(null,null,"/proposer-cours");
   }
 
 }

@@ -88,6 +88,7 @@ class MyLogin extends PageViewElement {
         }
       };
       xhr.send(JsonFile);
+      history.pushState(null,null,"/login");
       /*alert("Vous vous êtes bien connecté"); NE LE FAIRE QUE SI LE MDP ET LE LOGIN CORRESPONDENT AVEC CE QUI EST DANS LA BDD*/
     }
 
