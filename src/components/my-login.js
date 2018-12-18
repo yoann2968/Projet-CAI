@@ -60,8 +60,6 @@ class MyLogin extends PageViewElement {
     let url = document.location.href;
     let valide = true; //LET PORTEE DE BLOC ALORS QUE VAR PORTEE DE FONCTION
     let answers = (url.substring(28)).split("&");
-    console.log("url: ",url)
-    console.log("answers: ",answers)
 
     for(let i = 0; i<answers.length; i++){
       answers[i]=answers[i].substring(9);
@@ -69,7 +67,6 @@ class MyLogin extends PageViewElement {
         valide = false;
       }
     }
-    console.log("answers2: ",answers)
     if(valide){//SI LES DONNEES RENSEIGNEES VALIDES : ENVOI
       
       //PREPARATION DU JSON

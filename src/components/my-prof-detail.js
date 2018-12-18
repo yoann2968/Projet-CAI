@@ -97,7 +97,33 @@ class MyProfDetail extends LitElement {
 
   showCours(){
     if(this.professeur == "test" || this.details.cours[0]=="test"){return;}
-    return this.details.cours.map((item) =>html`Propose <b>${item.places}</b> place(s) tous les <b>${item.jour} à ${item.heure}h</b> pendant <b>${item.longueur}h</b>, à <b>${this.details.prix}</b>€/h<br>`);
+    return this.details.cours.map((item) =>html`Propose <b>${item.places}</b> place(s) tous les <b>${item.jour} à ${item.heure}h</b> pendant <b>${item.longueur}h</b>, à <b>${this.details.prix}</b>€/h<br><button @click="${(e)=>this.inscription(e,item)}">S'inscrire</button><br>`);
+  }
+
+  inscription(e,item){
+      //PREPARATION DU JSON
+      let JsonFile = JSON.stringify({
+        "nom": this.professeur,
+        "cours": [
+          {
+          "jour":item["jour"],
+          "heure":item["heure"],
+          "longueur":item["longueur"],
+          "places": item["places"]
+          }
+        ]
+    });
+      console.log(JsonFile);
+      var xhr = new XMLHttpRequest();
+      var url_server = "http://127.0.0.1:3000/registerCours"; //MODIFIER CET URL avec http://127.0.0.1:3000/createCours
+      xhr.open("POST", url_server, true);
+      xhr.setRequestHeader("Content-Type", "application/json");
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          var json = JSON.parse(xhr.responseText);
+        }
+      };
+      xhr.send(JsonFile);    
   }
 }
 // Associate the new class with an element name
