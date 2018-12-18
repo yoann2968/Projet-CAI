@@ -85,6 +85,7 @@ class MyLogin extends PageViewElement {
       xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
           var json = JSON.parse(xhr.responseText);
+          console.log("REPONSE : ",json)
         }
       };
       xhr.send(JsonFile);
@@ -97,3 +98,5 @@ class MyLogin extends PageViewElement {
 }
 
 window.customElements.define('my-login', MyLogin);
+
+//on-click="${(e) => this._click(e)}"
