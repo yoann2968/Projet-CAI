@@ -23,10 +23,7 @@ class MyLogin extends PageViewElement {
       </div>
       <h3>Connectez vous à votre compte</h3>
       ${this.showLogin()}
-   
     `;
-
-    
   }
 
   static get properties() { 
@@ -50,13 +47,13 @@ class MyLogin extends PageViewElement {
         <label for="pseudo">Votre mot de passe :</label>
         <input type="text" name="mdp_____" placeholder="Entrez votre mot de passe" size="30" maxlength="10" />
     </p>
-    <button class="buttonLogin">Se connecter</button>
+    <button class="buttonLogin" @click="${(e) => this._ButtonClicked(e)}">Se connecter</button>
     </form><br>
     `;
   }
 
-
   sendRequest(){
+    this.utilisateur="test";
     let url = document.location.href;
     let valide = true; //LET PORTEE DE BLOC ALORS QUE VAR PORTEE DE FONCTION
     let answers = (url.substring(28)).split("&");
@@ -70,7 +67,7 @@ class MyLogin extends PageViewElement {
       }
     }
     console.log("answers2: ",answers)
-    if(valide){//SI LES DONNEES RENSEIGNEES VALIDES : ENVOI
+    if(valide){ //SI LES DONNEES RENSEIGNEES VALIDES : ENVOI
       
       //PREPARATION DU JSON
       let JsonFile = JSON.stringify({
@@ -85,18 +82,34 @@ class MyLogin extends PageViewElement {
       xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
           var json = JSON.parse(xhr.responseText);
-          console.log("REPONSE : ",json)
+          console.log("REPONSE : ",json.pseudo)
+          console.log("REPONSE : ",json.mdp)
+          if (answers[0]==json.pseudo && answers[1]==json.mdp){
+            valide=true;
+          }
+          else {
+            valide=false;
+          }
         }
       };
       xhr.send(JsonFile);
       history.pushState(null,null,"/login");
-      /*alert("Vous vous êtes bien connecté"); NE LE FAIRE QUE SI LE MDP ET LE LOGIN CORRESPONDENT AVEC CE QUI EST DANS LA BDD*/
     }
+    else{
+      valide=false;
+    }
+    this.VALIDE=valide;
+  }
 
+  _ButtonClicked(){
+    if (this.VALIDE){
+      alert("Vous vous êtes bien connecté");
+    }
+    else{
+      alert("Erreur, un champ n'a pas été renseigné correctement");
+    }
   }
 
 }
 
 window.customElements.define('my-login', MyLogin);
-
-//on-click="${(e) => this._click(e)}"
