@@ -101,6 +101,7 @@ class MyProfDetail extends LitElement {
   }
 
   inscription(e,item){
+      var JsonReceived;
       //PREPARATION DU JSON
       let JsonFile = JSON.stringify({
         "nom": this.professeur,
@@ -119,12 +120,17 @@ class MyProfDetail extends LitElement {
       xhr.setRequestHeader("Content-Type", "application/json");
       xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
-          this.details = JSON.parse(xhr.responseText);
+          var JsonReceived = JSON.parse(xhr.responseText);
+          changeDetails(JsonReceived);
         }
       };
       xhr.send(JsonFile);
-      this.update();
 
+  }
+
+  changeDetails(json){
+    this.details=json;
+    this.update;
   }
 }
 // Associate the new class with an element name
