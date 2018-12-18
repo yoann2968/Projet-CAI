@@ -113,17 +113,18 @@ class MyProfDetail extends LitElement {
           }
         ]
     });
-      console.log(JsonFile);
       var xhr = new XMLHttpRequest();
       var url_server = "http://127.0.0.1:3000/registerCours"; //MODIFIER CET URL avec http://127.0.0.1:3000/createCours
       xhr.open("POST", url_server, true);
       xhr.setRequestHeader("Content-Type", "application/json");
       xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
-          var json = JSON.parse(xhr.responseText);
+          this.details = JSON.parse(xhr.responseText);
         }
       };
-      xhr.send(JsonFile);    
+      xhr.send(JsonFile);
+      this.update();
+
   }
 }
 // Associate the new class with an element name
