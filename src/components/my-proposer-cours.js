@@ -4,7 +4,6 @@ import { PageViewElement } from './page-view-element.js';
 // These are the shared styles needed by this element.
 import { SharedStyles } from './shared-styles.js';
 
-
 class MyProposerCours extends (PageViewElement) {
   render() {
     return html`
@@ -13,7 +12,6 @@ class MyProposerCours extends (PageViewElement) {
       <h2>Proposez votre cours</h2>
       </div>
       <form>
-
       <section> 
       <h3>Qui êtes-vous ?</h3>
       ${this.showWhoAreYou()}
@@ -35,9 +33,6 @@ class MyProposerCours extends (PageViewElement) {
       <button class="buttonLogin">Soumettre</button></h2>
       </p></section> 
       </form>
-      <?php
-  echo $_POST['professeur'];
-?>
     `;
   }
 
@@ -49,6 +44,7 @@ class MyProposerCours extends (PageViewElement) {
   constructor(){
     super();
     this.sendRequest();
+    this.first==true;
   }
 
   showWhoAreYou(){
@@ -118,9 +114,8 @@ class MyProposerCours extends (PageViewElement) {
   }
 
   sendRequest(){
-
+    let valide=true;
     let url = document.location.href;
-    let valide = true;
     let answers = (url.substring(37)).split("&");
     for(let i = 0; i<answers.length; i++){
       answers[i]=answers[i].substring(11);
@@ -179,6 +174,7 @@ class MyProposerCours extends (PageViewElement) {
         }
       };
       xhr.send(JsonFile);
+      alert("Le formulaire a bien été enregistré ! :)");
     }
     history.pushState(null,null,"/proposer-cours");
   }
